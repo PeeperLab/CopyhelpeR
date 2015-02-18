@@ -8,4 +8,4 @@ filter to remove regions that display CNV.
 
 The package contains the accessor function getPathHelperFiles(reference.genome)
 which returns the full path to the helper files folder for the relevant
-reference genomes ("hg19", "mm9" or "mm10").
+reference genomes.
