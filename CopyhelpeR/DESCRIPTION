@@ -1,12 +1,12 @@
-Package: SCLCBam
+Package: CopyhelpeR
 Type: Package
-Title: Sequence data from chromosome 4 of a small-cell lung tumor
+Title: Helper files for CopywriteR
 Version: 0.99.0
 Date: 2015-02-18
 Author: Thomas Kuilman
 Maintainer: Thomas Kuilman <t.kuilman@nki.nl>
 Depends: R(>= 2.10)
 Suggests: BiocStyle
-Description: Sequence reads from a whole-exome sequencing approach on a small-cell lung tumor. The dataset only contains data of chromosome 4.
+Description: This package contains the helper files that are required to run the CopywriteR (see https://github.com/PeeperLab/CopywriteR/releases) R package. It contains pre-assembled 1kb bin GC-content and mappability bed files for the reference genomes hg19, mm9 and mm10. In addition, it contains a blacklist filter to remove regions that display CNV.
 License: GPL-2
-biocViews: DNASeqData, Lung, Cancer
+biocViews: Homo_Sapiens, GenomicSequence
