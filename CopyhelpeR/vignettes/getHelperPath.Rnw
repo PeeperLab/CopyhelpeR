@@ -1,0 +1,59 @@
+%\VignetteIndexEntry{CopywriteR}
+%\VignetteDepends{CopywriteR}
+%\VignetteKeywords{Copy number detection from targeted sequencing using off-target reads.}
+%\VignettePackage{CopywriteR}
+%\VignetteEngine{utils::Sweave}
+
+\documentclass{article}
+
+<<style-Sweave, eval=TRUE, echo=FALSE, results=tex>>=
+BiocStyle::latex()
+@
+
+\newcommand{\exitem}[3]{%
+  \item \texttt{\textbackslash#1\{#2\}} #3 \csname#1\endcsname{#2}.%
+}
+
+\title{\bf SCLCBam: Sequence data from chromosome 4 of a small-cell lung tumor.}
+\author{Thomas Kuilman}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  Department of Molecular Oncology \\*
+  Netherlands Cancer Institute \\*
+  The Netherlands \\*
+\end{center}
+
+\begin{center}
+  \email{t.kuilman@nki.nl} or \email{thomaskuilman@yahoo.com}
+\end{center}
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Usage}
+
+To obtain the full path to the .bam file, use the \Rcode{getPathBam()} function:
+
+<<getPathBam, print=FALSE, eval=TRUE>>=
+library(SCLCBam)
+getPathBam()
+@
+
+The .bam file is provided as experimental data for the \Biocpkg{CopywriteR}
+package, which uses off-target reads from targeted sequencing for copy number
+detection.
+
+\section{Reference}
+
+The dataset was downloaded from the European Nucleotide Archive using the
+accession number PRJEB6954 using sample accession number SAMEA2697779, and reads
+on chromosome 4 were extracted. The full .bam file containing data for all
+chromosomes can be downloaded from
+\url{http://www.ebi.ac.uk/ena/data/view/SAMEA2697779}.
+
+\end{document}
