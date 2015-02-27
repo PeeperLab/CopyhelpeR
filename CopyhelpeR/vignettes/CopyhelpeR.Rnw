@@ -10,7 +10,7 @@ BiocStyle::latex()
 @
 
 \newcommand{\exitem}[3]{%
-  \item \texttt{\textbackslash#1\{#2\}} #3 \csname#1\endcsname{#2}.%
+    \item \texttt{\textbackslash#1\{#2\}} #3 \csname#1\endcsname{#2}.%
 }
 
 \title{\bf CopyhelpeR: Helper files for CopywriteR.}
@@ -21,13 +21,13 @@ BiocStyle::latex()
 \maketitle
 
 \begin{center}
-  Department of Molecular Oncology \\*
-  Netherlands Cancer Institute \\*
-  The Netherlands \\*
+    Department of Molecular Oncology \\*
+    Netherlands Cancer Institute \\*
+    The Netherlands \\*
 \end{center}
 
 \begin{center}
-  \email{t.kuilman@nki.nl} or \email{thomaskuilman@yahoo.com}
+    \email{t.kuilman@nki.nl} or \email{thomaskuilman@yahoo.com}
 \end{center}
 
 \tableofcontents
