@@ -39,9 +39,15 @@ BiocStyle::latex()
 To get the full path to the helper files folder for the relevant reference
 genomes (hg19, mm9 or mm10), use the \Rcode{loadHelperFile()} function:
 
-<<getPathHelperFiles, print=FALSE, eval=TRUE>>=
+<<getPathHelperFiles, print=FALSE, eval=TRUE, echo=FALSE, results=hide>>=
+@
+
+<<getPathHelperFiles, print=FALSE, eval=TRUE, results=hide>>=
 library(CopyhelpeR)
 getPathHelperFiles("hg19")
+@
+<<getPathHelperFiles2, print=FALSE, eval=TRUE, echo=FALSE>>=
+cat(CopyhelpeR:::.wrap(getPathHelperFiles("hg19")))
 @
 
 The helper files are provided as annotation data for the \Biocpkg{CopywriteR}
@@ -51,5 +57,21 @@ mappability files for the reference genomes hg19, mm9 and mm10. In addition,
 it contains a blacklist filter to remove regions that display CNV. Files in the
 returned folder are stored as GRanges objects from the \Biocpkg{GenomicRanges} 
 package.
+
+The GC-content data were obtained using 'bedtools nuc'
+(\url{http://bedtools.readthedocs.org/en/latest/content/tools/nuc.html}). Only
+relevant columns were saved in the GC.mappa.grange GRanges object.
+
+The mappability data were obtained by aligning all possible 51 base pair genomic
+fragments using BWA (\url{http://bio-bwa.sourceforge.net/}). The mappability of
+every fragment was binarized, and the mappability of a specific region is taken
+as the average mappability of all fragments that fall into this region.
+
+The regions of copy number variation (CNV) were obtained from the
+'wgEncodeDacMapabilityConsensusExcludable.bed.gz' and the
+'wgEncodeDukeMapabilityRegionsExcludable.bed.gz' files from the ENCODE project
+(\url{http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeMapability/}).
+Blacklisted regions were merged using 'bedtools merge'
+(\url{http://bedtools.readthedocs.org/en/latest/content/tools/merge.html}).
 
 \end{document}

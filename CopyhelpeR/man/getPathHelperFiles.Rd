@@ -13,10 +13,10 @@ filter to remove regions that display CNV. Files are stored as GRanges objects
 from the \code{GenomicRanges} Bioconductor package.
 }
 \usage{
-getPathHelperFiles(reference.genome)
+getPathHelperFiles(ref.genome)
 }
 \arguments{
-\item{reference.genome}{
+\item{ref.genome}{
 the reference genome for which the helper files are required.
 }
 }
