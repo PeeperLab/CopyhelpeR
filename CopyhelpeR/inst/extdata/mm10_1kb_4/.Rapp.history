@@ -1,0 +1,50 @@
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/blacklist.rda")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/GC_mappability.rda")
+blacklist.grange <- blacklist.grange[seqlevels(blacklist.grange) == 4]
+blacklist.grange
+blacklist.grange <- blacklist.grange[seqlevels(blacklist.grange) == 4]
+blacklist.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/blacklist.rda")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/GC_mappability.rda")
+blacklist.grange
+seqnames(blacklist.grange)
+blacklist.grange <- blacklist.grange[seqnames(blacklist.grange) == 4]
+blacklist.grange
+blacklist.grange <- as(blacklist.grange, "data.frame")
+blacklist.grange
+blacklist.grange <- GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange
+blacklist.grange <- as(blacklist.grange, "data.frame")
+blacklist.grange$seqnames <- as.vector(blacklist.grange$seqnames)
+blacklist.grange <- GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange
+save(blacklist.grange, file = "/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/blacklist.rda", compress = "xz")
+ls()
+rm(blacklist.grange)
+GC.mappa.grange
+GC.mappa.grange <- GC.mappa.grange[seqnames(GC.mappa.grange) == 4]
+GC.mappa.grange
+GC.mappa.grange <- as(GC.mappa.grange, "data.frame")
+GC.mappa.grange
+GC.mappa.grange$seqnames <- as.vector(GC.mappa.grange$seqnames)
+head(GC.mappa.grange)
+GC.mappa.grange$width <- NULL
+GC.mappa.grange$start <- NULL
+head(GC.mappa.grange)
+GC.mappa.grange$start <- GC.mappa.grange$end - 999
+head(GC.mappa.grange)
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/GC_mappability.rda")
+GC.mappa.grange
+GC.mappa.grange <- GC.mappa.grange[seqnames(GC.mappa.grange) == 4]
+GC.mappa.grange
+GC.mappa.grange <- as(GC.mappa.grange, "data.frame")
+head(GC.mappa.grange)
+GC.mappa.grange$width <- NULL
+head(GC.mappa.grange)
+GC.mappa.grange$strand <- NULL
+head(GC.mappa.grange)
+GC.mappa.grange$seqnames <- as.vector(GC.mappa.grange$seqnames)
+GC.mappa.grange <- GenomicRanges::makeGRangesFromDataFrame(GC.mappa.grange, keep.extra.columns=T)
+GC.mappa.grange
+save(GC.mappa.grange, file = "/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/mm10_1kb_4/GC_mappability.rda", compress = "xz")
+q()

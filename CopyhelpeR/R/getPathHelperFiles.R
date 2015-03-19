@@ -10,6 +10,8 @@ getPathHelperFiles <- function(ref.genome) {
                        pattern = "^mm9", full.names = TRUE),
            "mm10" = dir(system.file(package = "CopyhelpeR", "extdata"),
                         pattern = "^mm10", full.names = TRUE),
+           "mm10_4" = dir(system.file(package = "CopyhelpeR", "extdata"),
+                        pattern = "_4$", full.names = TRUE),
            stop(.wrap("There are currently no helper files available for",
                       "reference genome", sQuote(ref.genome))))
 }

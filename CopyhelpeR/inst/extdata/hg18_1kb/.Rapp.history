@@ -1,0 +1,111 @@
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/GC_mappability.rda")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/GC_mappability.rda")
+ls()
+rm(GC.mappa.grange)
+ls()
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/GC_mappability.rda")
+ls()
+GC.mappa.grange <- GC
+ll
+ls()
+rm(GC)
+ls()
+GC.mappa.grange
+save(GC.mappa.grange, file = "~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/GC_mappability.rda", compress = "xz")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/GC_mappability.rda")
+ls()
+GC.mappa.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/GC_mappability.rda")
+GC.mappa.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/blacklist.rda")
+ls()
+rm(GC.mappa.grange)
+ls(0)
+ls()
+blacklist.grange <- read.table("~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklisthg18lift.bed", as.is = T, sep = "\t")
+blacklist.grange
+colnames(blacklist.grange) <- c("seqnames", "start", "end")
+head(blacklist.grange)
+blacklist.grange$seqnames <- gsub("chr", "", blacklist.grange$seqnames)
+head(blacklist.grange)
+blacklist.grange <- blacklist.grange[blacklist.grange$seqnames %in% c(1:22, "X", "Y"),]
+head(blacklist.grange)
+unique(blacklist.grange$seqnames)
+blacklist.grange$seqnames <- as.vector(blacklist.grange$seqnames)
+head(blacklist.grange)
+GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange<-GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange
+order(blacklist.grange)
+blacklist.grange[order(blacklist.grange)]
+blacklist.grange <- blacklist.grange[order(blacklist.grange)]
+save(blacklist.grange, file = "~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklist.rda", compress = "xz")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/blacklist.rda")
+blacklist.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklist.rda")
+blacklist.grange
+ls()
+rm(blacklist.grange)
+ls()
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/GC_hg38.Rdata")
+ls()
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/GC_mappability.rda")
+ls()
+GC.mappa.grange <- GC
+rm(GC.mappa.grange)
+GC.mappa.grange <- GC
+rm(GC)
+ls()
+ls()
+GC.mappa.grange
+GC.mappa.grange <- GC.mappa.grange[order(GC.mappa.grange)]
+GC.mappa.grange
+GC.mappa.grange[1000:10005]
+save(GC.mappa.grange, file = "~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/GC_mappability.rda", compress = "xz")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/GC_mappability.rda")
+GC.mappa.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/GC_mappability.rda")
+GC
+GC.mappa.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/GC_mappability.rda")
+GC.mappa.grange
+ls()
+rm(GC.mappa.grange)
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/blacklist.rda")
+ls()
+blacklist.grange <- read.table("~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/blacklisthg38lift.bed", as.is=T, sep="\t")
+head(blacklist.grange)
+blacklist.grange$V1 <- gsub("chr", "", blacklist.grange$V1)
+head(blacklist.grange)
+blacklist.grange <- blacklist.grange[blacklist.grange$V1 %in% c(1:22, "X", "Y"),]
+head(blacklist.grange)
+colnames(blacklist.grange) <- c("seqnames", "start", "end")
+head(blacklist.grange)
+blacklist.grange$seqnames <- as.vector(blacklist.grange$seqnames)
+head(blacklist.grange)
+nrow(blacklist.grange)
+GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange<-GenomicRanges::makeGRangesFromDataFrame(blacklist.grange)
+blacklist.grange
+blacklist.grange <- blacklist.grange[order(blacklist.grange)]
+blacklist.grange
+save(blacklist.grange, file = "~/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/blacklist.rda", compress = "xz")
+ls()
+rm(blacklist.grange)
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklist.rda")
+blacklist.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg19_1kb/blacklist.rda")
+blacklist.grange
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/blacklist.rda")
+blacklist.grange
+reduce(blacklist.grange)
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklist.rda")
+blacklist.grange
+reduce(blacklist.grange)
+blacklist.grange<-reduce(blacklist.grange)
+save(blacklist.grange, file = "/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg18_1kb/blacklist.rda", compress = "xz")
+load("/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/blacklist.rda")
+blacklist.grange
+reduce(blacklist.grange)
+blacklist.grange<-reduce(blacklist.grange)
+save(blacklist.grange, file = "/Users/t.kuilman/git/CopyhelpeR/CopyhelpeR/inst/extdata/hg38_1kb/blacklist.rda", compress = "xz")
